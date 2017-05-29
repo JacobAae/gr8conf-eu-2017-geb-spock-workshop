@@ -1,0 +1,8 @@
+= Part 2 - Spock Practice
+
+
+
+This part contains a test class for calculation of energy in food.
+
+Start out in the `ProductSpec` class, and implement the code to make the test pass in the `ProductSpec` class
+
