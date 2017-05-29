@@ -38,8 +38,7 @@ class Product {
      * @return if the product is clearly invalid, false is returned
      */
     boolean isValid() {
-        // TODO - Implement me
-        return null
+        return sum <= 100
     }
 
     /**
@@ -47,8 +46,10 @@ class Product {
      * @return
      */
     BigDecimal getWaterContent() {
-        // TODO - Implement me
-        return null
+        if( isValid()) {
+            return 100 - sum
+        }
+        null
     }
 
     /**
@@ -56,8 +57,7 @@ class Product {
      * @return
      */
     private getSum() {
-        // TODO - Implement me
-        return null
+        return (fat ?: 0) + (protein ?: 0) + (carbohydrate ?: 0) + (alcohol ?: 0)
     }
 
     /**
@@ -70,8 +70,7 @@ class Product {
      * @return the total energy in the amount from the product
      */
     BigDecimal getTotalEnergy(BigDecimal totalWeightInGrams) {
-        // TODO - Implement me
-        return null
+        return totalWeightInGrams * ((fat ?: 0) * 37 + (protein ?: 0) * 17 + (carbohydrate ?: 0) * 17 + (alcohol ?: 0) * 30)/100
     }
 
 }
