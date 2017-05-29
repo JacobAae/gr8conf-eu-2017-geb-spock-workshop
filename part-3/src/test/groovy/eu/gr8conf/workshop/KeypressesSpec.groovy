@@ -12,13 +12,23 @@ import spock.lang.Unroll
  */
 class KeypressesSpec extends GebReportingSpec {
 
-    // Test A, UP-key and Space
     @Unroll
     void "keypresses are registrered"() {
         setup:
         go "http://the-internet.herokuapp.com/key_presses"
 
-        expect: 'Needs implementation'
-        false
+        when:
+        $("body") << input
+
+
+        then:
+        $("#result").text() == text
+
+        where:
+        input                       | text
+        Keys.chord(Keys.SPACE)      | "You entered: SPACE"
+        Keys.chord(Keys.ARROW_UP)   | "You entered: UP"
+        'A'                         | "You entered: A"
+
     }
 }

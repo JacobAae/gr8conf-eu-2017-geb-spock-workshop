@@ -2,27 +2,37 @@ package eu.gr8conf.workshop
 
 import geb.spock.GebReportingSpec
 
+
 class FileUploadSpec extends GebReportingSpec {
 
-    void "uploading a file shows the filename after succesfull upload"() {
+    void "uploading a file shows the filename"() {
         setup:
         go "http://the-internet.herokuapp.com/upload"
 
-        expect: 'Needs implementation'
-        false
+        when:
+        $("form").file = getDummyFilePath()
+        $("input.button").click()
+
+        then:
+        waitFor{
+            $("#uploaded-files").text().trim() == "DummyFile.txt"
+        }
     }
 
     void "filedownload retrieves a file"() {
         setup:
         go "http://the-internet.herokuapp.com/download"
 
-        expect: 'Needs implementation'
-        false
+        when:
+        def downloadLink = $("a", text: 'DummyFile.txt')
+
+        and:
+        def bytes = downloadBytes(downloadLink.@href)
+
+        then:
+        new String(bytes) == "No fun here!"
     }
 
-    /*
-        Helper method to retrieve a file location for the DummyFile.txt in the classpath
-     */
     String getDummyFilePath() {
         getClass().classLoader.getResource('DummyFile.txt').file
     }

@@ -7,21 +7,37 @@ class JsAlertsSpec extends GebReportingSpec {
 
 
 
-    void "verify javascript alert can be handled - displaying 'You successfuly clicked an alert'"() {
+    void "verify javascript alert can be handled"() {
         setup:
         go "http://the-internet.herokuapp.com/javascript_alerts"
 
-        expect: 'Needs implementation'
-        false
+        when:
+        withAlert {
+            $("li>button", 0).click()
+        }
+
+        then:
+        $("#result").text() == "You successfuly clicked an alert"
     }
 
     @Unroll
-    void "verify javascript confirm can be handled - accepting and rejecting displaying 'You Clicked'"() {
+    void "verify javascript confirm can be handled - accepting and rejecting"() {
         setup:
         go "http://the-internet.herokuapp.com/javascript_alerts"
 
-        expect: 'Needs implementation'
-        false
+        when:
+        withConfirm(accepting) {
+            $("li>button", 1).click()
+        }
+
+        then:
+        $("#result").text() == message
+
+        where:
+        accepting   | message
+        true        | "You clicked: Ok"
+        false       | "You clicked: Cancel"
+
     }
 
 
