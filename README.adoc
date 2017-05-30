@@ -1,0 +1,45 @@
+= Exercises: Browser Based Testing with Geb and Spock
+
+== Intro
+
+There are 4 sub-projects in this workshop. For each, there is a starting skeleton project.
+
+In the README file for each subproject, there are instructions for what you should do.
+
+For all subprojects, there is one solution awailable in the solution branch. If you get stuck, or wish
+to compare to your solution, you can stash your work and checkout the solution branch:
+
+ git stash
+ git checkout solution
+
+To get back to your work:
+
+ git checkout master
+ git stash pop
+
+
+== Part 1: Script to automate browser work
+
+In this getting started excercise, you will learn how to have Geb spin up a browser and do some automation.
+
+// Jacob: Extracting the Grails plugins
+
+== Part 2: Spock Testing (without Geb)
+
+This is mostly relevant, if you don't know Spock. Here you will have a few exercises to get aqquainted with
+Spock as a testing framework.
+
+// Jacob: TODO make a few excersices - or steal from last years workshop!
+
+== Part 3: Geb and Spock Exercises
+
+In this section, you can work on small exercises that are stand alone.
+
+// Jacob: Tests against the http://the-internet.herokuapp.com
+
+
+== Part 4: A full test case
+
+Here, you will have to write a full test spec, that does more than a single thing
+
+// Jacob: Extracting Quotes
