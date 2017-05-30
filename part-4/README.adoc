@@ -1,0 +1,16 @@
+= Part 4 - Testing goodreads.com/quotes
+
+In this part of the workshop, you should do functional testing on a live website,
+structuring your test code using Pages and Modules.
+
+Start by clicking a bit around on https://www.goodreads.com/quotes[] and notice you can search for quotes using author,
+tags or keywords.
+
+Go to the QuotesSpec, where the first elements are set up for you, and implement the specs that
+are predefined. Feel free to add more tests, but make sure you structure them nicely.
+If you are using Pages and Modules correct, it should be quite easy to add another test scenario.
+
+== Out of Work?
+
+Make a test scenario that verifies the book section on goodreads.com also works,
+or select your own favorite website/webapp and try to test it out using Geb and Spock :)
