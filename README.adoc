@@ -17,6 +17,7 @@ To get back to your work:
  git checkout master
  git stash pop
 
+There are slides available in the slides directory with notes on both Spock and Geb.
 
 == Part 1: Script to automate browser work
 
